@@ -1,70 +1,55 @@
-from flask import Flask, jsonify, send_from_directory
-import os
+from flask import Flask, jsonify
+from flask_cors import CORS
 
-app = Flask(
-    __name__,
-    static_folder='../frontend/build',  # Where React build files will live
-    static_url_path='/'
-)
+app = Flask(__name__)
+CORS(app)  # Enable CORS so that our React app can fetch data
 
-print("Absolute path to static_folder:", os.path.abspath(app.static_folder))
+# Example data
+about_data = {
+    "name": "😁 Subhrato Som",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nec sagittis nulla, blandit lacinia mi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In sit amet molestie dui. Proin non sollicitudin quam. Sed diam nisl, molestie non placerat et, iaculis faucibus mauris. Fusce consectetur neque eget felis ultrices varius. Etiam ornare ligula non eros accumsan suscipit. Curabitur quis mi ullamcorper diam tempus lacinia. Praesent gravida laoreet diam sit amet suscipit. Suspendisse rhoncus elit ex, at fringilla nisi dictum a. Interdum et malesuada fames ac ante ipsum primis in faucibus. In a augue at turpis rhoncus facilisis et ac nisl. Donec et placerat massa. Duis condimentum ante at sapien auctor lobortis. Nunc gravida sed sem sed imperdiet. Etiam vel accumsan tortor, vitae consectetur urna.",
+    "cover_image_url": "https://via.placeholder.com/1200x400?text=Notion-Style+Cover" 
+    # Replace with your own cover image URL
+}
 
-@app.route('/')
-def serve_react_app():
-    """
-    Serve the compiled React app (index.html).
-    """
-    # We'll assume you've built your React app into `../frontend/build`
-    return send_from_directory(app.static_folder, 'index.html')
+projects_data = [
+    {
+        "title": "Project One",
+        "description": "A brief description of project one.",
+        "link": "https://github.com/username/project-one"
+    },
+    {
+        "title": "Project Two",
+        "description": "A brief description of project two.",
+        "link": "https://github.com/username/project-two"
+    }
+]
 
-# Example route for "About Me" data
-@app.route('/api/about')
-def about():
-    return jsonify({
-        "name": "John Doe",
-        "shortBio": "I am a software developer who loves minimalist design and well-crafted user experiences."
-    })
+experiences_data = [
+    {
+        "company": "Company A",
+        "role": "Software Engineer",
+        "description": "Worked on various cool projects..."
+    },
+    {
+        "company": "Company B",
+        "role": "Intern",
+        "description": "Learned a ton about web development..."
+    }
+]
 
-@app.route('/api/projects')
+@app.route("/api/about", methods=["GET"])
+def get_about():
+    return jsonify(about_data)
+
+@app.route("/api/projects", methods=["GET"])
 def get_projects():
-    return jsonify([
-        {
-            "id": 1,
-            "title": "Portfolio Website",
-            "description": "Description of your project",
-            "link": "https://github.com/yourusername/portfolio"
-        },
-        {
-            "id": 2,
-            "title": "Another Cool Project",
-            "description": "Short detail about it",
-            "link": "https://github.com/yourusername/cool-project"
-        }
-    ])
+    return jsonify(projects_data)
 
-@app.route('/api/experience')
-def get_experience():
-    return jsonify([
-        {
-            "id": 1,
-            "company": "Your Company",
-            "role": "Software Engineer",
-            "duration": "2022 - Present",
-            "description": "Short summary of your role..."
-        },
-        {
-            "id": 2,
-            "company": "Other Company",
-            "role": "Intern",
-            "duration": "2021",
-            "description": "Internship responsibilities..."
-        }
-    ])
+@app.route("/api/experiences", methods=["GET"])
+def get_experiences():
+    return jsonify(experiences_data)
 
-
-@app.errorhandler(404)
-def not_found(e):
-    return send_from_directory(app.static_folder, 'index.html')
-
-if __name__ == '__main__':
-    app.run(debug=True)
+if __name__ == "__main__":
+    # For development only
+    app.run(debug=True, port=5000)
