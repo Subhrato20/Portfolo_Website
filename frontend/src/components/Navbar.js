@@ -1,13 +1,32 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { FaHome, FaGithub, FaLinkedin, FaFileAlt } from 'react-icons/fa'; // Import Icons
 
 const Navbar = () => {
   return (
     <nav className="navbar">
-      <Link to="/" className="nav-logo">Home Page</Link>
+      {/* Left-aligned Home Icon */}
+      <Link to="/" className="nav-logo">
+        <FaHome className="home-icon" />
+      </Link>
+
+      {/* Centered Navigation Links */}
       <div className="nav-links">
         <Link to="/projects">Projects</Link>
         <Link to="/experiences">Experiences</Link>
+      </div>
+
+      {/* Right-aligned Social Links */}
+      <div className="nav-social-links">
+        <a href="https://github.com/YOUR_GITHUB" target="_blank" rel="noopener noreferrer">
+          <FaGithub className="nav-icon" />
+        </a>
+        <a href="https://linkedin.com/in/YOUR_LINKEDIN" target="_blank" rel="noopener noreferrer">
+          <FaLinkedin className="nav-icon" />
+        </a>
+        <a href="YOUR_RESUME_LINK" target="_blank" rel="noopener noreferrer">
+          <FaFileAlt className="nav-icon" />
+        </a>
       </div>
     </nav>
   );

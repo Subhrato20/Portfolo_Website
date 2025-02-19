@@ -13,6 +13,7 @@ body {
   height: 100vh;
 }
 
+/* Navbar */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -22,22 +23,56 @@ body {
   border-bottom: 1px solid #e0e0e0;
 }
 
+/* Home Icon */
 .nav-logo {
-  font-weight: 600;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
+  color: #2e2e2e;
   text-decoration: none;
+}
+
+.home-icon {
+  font-size: 1.4rem;
   color: #2e2e2e;
 }
 
+.home-icon:hover {
+  color: #0070f3; /* Notion-like blue hover effect */
+}
+
+/* Navbar Links (Projects & Experiences) */
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
 .nav-links a {
-  margin-left: 1rem;
   text-decoration: none;
   color: #2e2e2e;
+  font-size: 1rem;
+  font-weight: 500;
 }
 
 .nav-links a:hover {
   text-decoration: underline;
 }
+
+/* Social Media Links */
+.nav-social-links {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav-social-links a {
+  text-decoration: none;
+  color: #2e2e2e;
+  font-size: 1.4rem;
+}
+
+.nav-social-links a:hover {
+  color: #0070f3;
+}
+
 
 .content-container {
   flex: 1;
@@ -87,3 +122,150 @@ body {
 .notion-block p {
   margin: 0 0 0.5rem 0;
 }
+
+/* Projects Heading */
+.projects-heading {
+  margin-top: 2rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* Notion-style Table */
+.notion-table {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  overflow: hidden;
+  font-size: 14px;
+}
+
+/* Table Header */
+.notion-table-header {
+  display: flex;
+  background-color: #fafafa;
+  font-weight: 600;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.notion-table-header .notion-table-cell {
+  color: #787878;
+}
+
+/* Table Row */
+.notion-table-row {
+  display: flex;
+  padding: 12px 10px;
+  border-bottom: 1px solid #ddd;
+  transition: background 0.2s ease-in-out;
+}
+
+.notion-table-row:hover {
+  background: #f8f8f8;
+}
+
+.notion-table-row:last-child {
+  border-bottom: none;
+}
+
+/* Table Cell */
+.notion-table-cell {
+  flex: 1;
+  padding: 10px;
+  text-align: left;
+}
+
+.notion-table-cell.title {
+  font-weight: bold;
+}
+
+.notion-table-cell.description {
+  color: #444;
+}
+
+/* "New Page" Placeholder */
+.notion-table-row.new-page {
+  color: #888;
+  cursor: pointer;
+}
+
+.notion-table-row.new-page:hover {
+  background: #f3f3f3;
+}
+
+.notion-table-row.new-page .notion-table-cell {
+  text-align: center;
+  font-weight: 500;
+}
+
+/* Projects Heading */
+.projects-heading {
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+/* Notion-style Table */
+.notion-table {
+  display: flex;
+  flex-direction: column;
+  border-radius: 6px;
+  overflow: hidden;
+  font-size: 14px;
+}
+
+/* Table Header (No Background, No Highlight) */
+.notion-table-header {
+  display: flex;
+  font-weight: 500;
+  padding: 8px 0;
+  color: #888;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Table Row */
+.notion-table-row {
+  display: flex;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+  transition: background 0.2s ease-in-out;
+}
+
+.notion-table-row:hover {
+  background: transparent;
+}
+
+/* Table Cell */
+.notion-table-cell {
+  flex: 1;
+  padding: 0 10px;
+  text-align: left;
+}
+
+.notion-table-cell.title {
+  font-weight: bold;
+}
+
+/* Vertical Divider */
+.notion-table-divider {
+  width: 1px;
+  background: #ddd;
+  height: auto;
+}
+
+/* "New Page" Placeholder */
+.notion-table-row.new-page {
+  color: #888;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.notion-table-row.new-page:hover {
+  background: #f3f3f3;
+}
+
+.notion-table-row.new-page .notion-table-cell {
+  text-align: center;
+}
+
