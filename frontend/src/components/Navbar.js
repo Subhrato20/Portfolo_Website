@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaHome, FaGithub, FaLinkedin, FaFileAlt } from 'react-icons/fa'; // Import Icons
+import { FaHome, FaGithub, FaLinkedin, FaFileAlt, FaEnvelope } from 'react-icons/fa'; // Import Icons
 
 const Navbar = () => {
   return (
@@ -15,19 +15,25 @@ const Navbar = () => {
         <Link to="/projects">Projects</Link>
         <Link to="/experiences">Experiences</Link>
       </div>
+      
+      {/* TODO: Add Mailto */}
 
-      {/* Right-aligned Social Links */}
+        
       <div className="nav-social-links">
+      <a href="YOUR_RESUME_LINK" target="_blank" rel="noopener noreferrer">
+          <FaFileAlt className="nav-icon" />
+        </a>
         <a href="https://github.com/YOUR_GITHUB" target="_blank" rel="noopener noreferrer">
           <FaGithub className="nav-icon" />
         </a>
         <a href="https://linkedin.com/in/YOUR_LINKEDIN" target="_blank" rel="noopener noreferrer">
           <FaLinkedin className="nav-icon" />
         </a>
-        <a href="YOUR_RESUME_LINK" target="_blank" rel="noopener noreferrer">
-          <FaFileAlt className="nav-icon" />
+        <a href="mailto:your.email@example.com">
+          <FaEnvelope className="nav-icon" />
         </a>
-      </div>
+    </div>
+
     </nav>
   );
 };
