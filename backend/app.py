@@ -1,5 +1,7 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 from flask_cors import CORS
+from groq_client import get_groq_response
+
 
 app = Flask(__name__)
 CORS(app)  # Enable CORS so that our React app can fetch data
