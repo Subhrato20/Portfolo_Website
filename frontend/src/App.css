@@ -270,3 +270,79 @@ body {
   text-align: center;
 }
 
+/* ===================== */
+/* Groq Chat Styles */
+/* ===================== */
+
+.groq-chat-container {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: #fafafa;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.groq-chat-container h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #2e2e2e;
+}
+
+.groq-chat-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.groq-chat-textarea {
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: #fff;
+  color: #2e2e2e;
+  resize: none;
+  font-family: inherit;
+}
+
+.groq-chat-button {
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  background-color: #0070f3;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+.groq-chat-button:hover {
+  background-color: #005dc1;
+}
+
+.groq-chat-response {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: #fff;
+  border-radius: 6px;
+  border: 1px solid #e0e0e0;
+  font-size: 1rem;
+  color: #2e2e2e;
+  white-space: pre-wrap;
+}
+
+.groq-chat-response h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2e2e2e;
+}
+
+

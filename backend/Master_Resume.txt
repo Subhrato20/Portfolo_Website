@@ -1,0 +1,159 @@
+Subhrato Som
+Philadelphia, Pennsylvania 19104
+ 215-240-9510 # ss5654@drexel.edu ï linkedin.com/in/subhratosom/ § github.com/Subhrato20
+
+Summary
+
+I am a Master’s student in Computer Science at Drexel University (graduating in May 2025) with a strong focus on Artificial Intelligence, Machine Learning, and Cloud Computing. With hands-on experience in AI automation, cloud services (AWS, Azure), and full-stack development, I specialize in designing scalable AI solutions and deploying them using modern frameworks and tools. My technical expertise spans Python, Java, SQL, NoSQL, vector databases, and deep learning frameworks like TensorFlow and PyTorch. I am passionate about solving complex problems, optimizing systems, and continuously expanding my knowledge to create impactful, real-world solutions.
+
+
+Education
+Drexel University
+Master’s of Science in Computer Science
+
+Vellore Institute of Technology
+Bachelor of Technology in Computer Science and Engineering
+
+Sep 2023 - May 2025
+Philadelphia, PA, USA
+Jul 2019 - Jun 2023
+Chennai, TN, India
+
+Coursework: Machine Learning, Deep Learning, Computer Vision, Data Structures & Algorithms, Software Design, Test
+Driven Development, Computer Architecture & Organization Full Stack, Agile Methodology, Object Oriented Programming, Operating Systems, Information Security Database Management, DevOps, CI/CD.
+
+Technical Skills
+Cloud Technologies: AWS EC2, AWS SageMaker, AWS Lambda, Docker, Jenkins, Kubernetes.
+Languages: Python, Java, JavaScript, Matlab, Swift, Julia, Rust, C, C++.
+Web Development: HTML, CSS, React, Node.js, Express.js, Flask.
+Machine Learning: Scikit-learn, TensorFlow, PyTorch, LangChain.
+Database Technologies: MySQL, PostgreSQL, MongoDB, Snowﬂake
+System Designs: Distributed Systems, Object-Oriented Design, Scalability
+
+Experience
+AI Intern
+Jun 2024 – Dec 2024
+Mathtech, Inc
+Hamilton, NJ
+• Developed, optimized and shipped a Retrieval-Augmented Generation (RAG) system, leveraging advanced natural language
+processing techniques for eﬃcient document retrieval and knowledge generation.
+• Utilized AWS services like SageMaker, EC2, and S3 for the system to ensure scalable and eﬃcient deployment.
+• Integrated AWS Cognito for secure user authentication and streamlined access management within the application.
+• Developed a seamless pipeline for document storage, embedding generation, and vector search using SageMaker and Milvus
+hosted on EC2.
+• Enhanced chunk parsing techniques by dynamically adjusting chunk size and overlap based on document structure,
+signiﬁcantly improving contextual understanding and retrieval eﬃciency.
+• Implemented chunk ranking using BERT-based models to score and prioritize document chunks, enhancing the relevance of
+retrieved information and ensuring better alignment with user queries.
+• Designed and ﬁne-tuned custom embeddings using dense and sparse vector representations to achieve superior retrieval
+performance.
+Research Assistant
+
+Feb 2024 – Present
+Social-NLP Lab, CCI Drexel University
+Philadelphia, PA
+• Conducted in-depth research on substance abuse memes on Reddit under Prof. Rezvaneh (Shadi) Rezapour, aiming to identify
+trends and insights that inform academic understanding.
+• Utilized state-of-the-art Large Language Models to analyze and interpret textual and visual elements, advancing the ﬁeld of
+digital sociology.
+• Worked on comparative analysis of LLaMA and GPT models, focusing on performance, eﬃciency, and application-speciﬁc
+strengths to derive actionable insights for research projects.
+• Implemented batch API methods for GPT-based inference, signiﬁcantly improving processing eﬃciency for large-scale textual
+datasets.
+• Analyzed semantic understanding of discourse in drug-related memes, comparing them with non-drug meme communities
+and incorporating human evaluation to validate ﬁndings.
+
+Projects
+Disaster Risk Analytics Platform | Philly Codefest 2024, Chubb Challenge Winner
+
+Apr 2024
+
+Developed and led a Climate Risk Analysis Platform, winning ﬁrst place at Philly Codefest’s Chubb Challenge. Integrated
+Poisson’s distribution and deep learning models to assess disaster risk and predict ﬁnancial damages with high precision.
+• Built a responsive Flask-based web application deployed on AWS EC2, utilizing AWS S3 for data storage and scalability to
+handle high user traﬃc during disaster events.
+• Incorporated real-time interactive map of United States for risk assessment.
+•
+
+•
+
+Collaborated with a multidisciplinary team to enhance user experience.
+
+Image Captioning for Chest X-ray Image | Vellore Institute of Technology (Capstone Project)
+
+Nov 2022 – May 2023
+
+Developed Encoder-Decoder models using TensorFlow-Keras, incorporating CNN architectures such as Xception, VGG16,
+and ResNet for accurate disease classiﬁcation and automated captioning of chest X-ray images.
+• Implemented Long Short-Term Memory (LSTM) networks for text generation, achieving seamless integration of visual and
+textual data.
+• Improved diagnostic eﬃciency with 86.4% accuracy in disease identiﬁcation, signiﬁcantly improving diagnostic eﬃciency and
+reducing error rates in radiographic reports.
+•
+
+Superhero Image generation Using Generative Adversarial Network | Vellore Institute of Technology
+
+Jul 2022
+
+Designed new superhero characters by leveraging StyleGAN to generate a diverse range of creative images, starting from a
+curated dataset of 150 existing superheroes.
+• Implemented data preprocessing pipelines to clean, resize, and augment the dataset, ensuring optimal input for the StyleGAN
+model.
+•
+
+REppeaR (Real Estate Transaction Website) | Vellore Institute of Technology
+
+Mar 2022 – Jun 2022
+
+Developed ”REppeaR,” a blockchain-based real estate transaction website using NodeJS, EJS, JavaScript, HTML, CSS, and
+MongoDB. The system featured a JavaScript-based blockchain network for secure and transparent data transactions.
+• Incorporated multi-user access system design (Admin and User) with robust authorization mechanisms to maintain data
+integrity and ensure secure transactions.
+• Enhanced security through cryptographic hashing for user data and implemented a digital signature veriﬁcation mechanism to
+validate transactions.
+• Provided real-time transaction tracking and history, improving transparency in property dealings.
+•
+
+Question Answering System using BERT | Vellore Institute of Technology
+
+Feb 2022 – Apr 2022
+
+Developed a question-answering system powered by BERT, trained on the CoQA dataset, and ﬁne-tuned for contextual
+adaptability across diverse linguistic scenarios.
+• Integrated pre-processing techniques like tokenization, padding, and truncation for eﬃcient model training and inference.
+• Achieved an accuracy of 84.1% using cosine similarity for evaluation.
+•
+
+Activities
+Chubb Challenge Winner, Philly Codefest 2024
+React Summit, GitNataion
+Open Source Contributor, Girlscript Foundation
+Student Expert, Postman
+
+Apr. 2024
+June 2022
+Sep. 2021 – Dec 2021
+Aug. 2021 – Jul 2023
+
+Certiﬁcations
+PostgreSQL for Everybody, University of Michigan
+Data Visualization with Tableau, UC Davis (Coursera)
+REACT SUMMIT, GitNation
+Microsoft Azure Fundamentals (AZ-900), Microsoft
+Google Data Analytics Professional Certiﬁcation, Google (Coursera)
+The Complete 2022 Web Development Bootcamp, Udemy
+AI for Everybody, Deeplearning.ai (Coursera)
+Fundamentals of Data Analytics, Nasscom FutureSkills Prime
+Machine Learning A-Z: Hands-On Python and R In Data Science, Udemy
+
+Feb. 2024
+Feb. 2023
+Jun. 2022
+May. 2022
+Jan. 2022
+Sep. 2021
+Aug. 2021
+Aug. 2021
+Aug. 2021
+
+
