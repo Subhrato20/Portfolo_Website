@@ -1,3 +1,4 @@
+// GroqChat.js
 import React, { useState } from 'react';
 
 const GroqChat = () => {
@@ -19,7 +20,6 @@ const GroqChat = () => {
       });
 
       const data = await res.json();
-
       if (data.error) {
         setResponse(`Error: ${data.error}`);
       } else {
@@ -36,14 +36,15 @@ const GroqChat = () => {
   return (
     <div className="groq-chat-container">
       <h2>Chat with Groq</h2>
-      <form onSubmit={handleSubmit} className="groq-chat-form">
+      <form className="groq-chat-form" onSubmit={handleSubmit}>
         <textarea
           value={userMessage}
           onChange={(e) => setUserMessage(e.target.value)}
           placeholder="Type your question about the resume..."
-          className="groq-chat-textarea"
+          rows="4"
         />
-        <button type="submit" disabled={loading} className="groq-chat-button">
+        <br />
+        <button type="submit" disabled={loading}>
           {loading ? 'Generating...' : 'Send'}
         </button>
       </form>
