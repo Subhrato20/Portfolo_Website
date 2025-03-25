@@ -1,248 +1,325 @@
-body {
-  margin: 0;
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
-    sans-serif;
-  background-color: #fff;
-  color: #2e2e2e;
+/* Chat input form - Notion AI style */
+.notion-ai-chat-form {
+  display: flex;
+  color: rgb(55, 53, 47); /* Notion's exact text color */
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
 }
 
 .app-container {
   display: flex;
   flex-direction: column;
   height: 100vh;
+  width: 100%;
 }
 
-/* Navbar */
+/* Navbar - Notion style */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: #fff;
-  padding: 1rem 2rem;
-  border-bottom: 1px solid #e0e0e0;
+  padding: 0 12px; /* Notion uses minimal padding */
+  border-bottom: 1px solid rgba(55, 53, 47, 0.09); /* Notion's exact border color */
+  height: 45px; /* Notion has a fixed height navbar */
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  font-size: 14px;
 }
 
-/* Home Icon */
+/* Navbar sections */
+.navbar-left, .navbar-center, .navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-left {
+  min-width: 180px;
+}
+
+.navbar-center {
+  flex: 1;
+  justify-content: center;
+}
+
+.navbar-right {
+  min-width: 180px;
+  justify-content: flex-end;
+}
+
+/* Home Icon and Breadcrumb */
 .nav-logo {
-  font-size: 1.5rem;
-  color: #2e2e2e;
+  display: flex;
+  align-items: center;
+  color: rgb(55, 53, 47);
   text-decoration: none;
 }
 
 .home-icon {
-  font-size: 1.4rem;
-  color: #2e2e2e;
+  font-size: 16px;
+  color: rgb(55, 53, 47);
+  opacity: 0.8;
 }
 
 .home-icon:hover {
-  color: #0070f3; /* Notion-like blue hover effect */
+  opacity: 1;
+}
+
+.nav-breadcrumb-separator {
+  margin: 0 6px;
+  color: rgba(55, 53, 47, 0.4);
+  font-size: 14px;
+}
+
+.nav-page-title {
+  font-weight: 500;
+  color: rgb(55, 53, 47);
+  font-size: 14px;
 }
 
 /* Navbar Links (Projects & Experiences) */
 .nav-links {
   display: flex;
-  gap: 1.5rem;
+  gap: 16px;
 }
 
 .nav-links a {
   text-align: center;
   text-decoration: none;
-  color: #2e2e2e;
-  font-size: 1rem;
-  font-weight: 500;
+  color: rgba(55, 53, 47, 0.65);
+  font-size: 14px;
+  padding: 4px 6px;
+  border-radius: 3px;
+  transition: background 20ms ease-in 0s;
 }
 
 .nav-links a:hover {
-  text-decoration: underline;
+  background: rgba(55, 53, 47, 0.08);
+  text-decoration: none;
 }
 
 /* Social Media Links */
 .nav-social-links {
   display: flex;
   align-items: center;
-  gap: 1rem;
 }
 
-.nav-social-links a {
+.nav-icon-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-decoration: none;
-  color: #2e2e2e;
-  font-size: 1.4rem;
+  color: rgba(55, 53, 47, 0.65);
+  width: 32px;
+  height: 32px;
+  border-radius: 3px;
 }
 
-.nav-social-links a:hover {
-  color: #0070f3;
+.nav-icon {
+  font-size: 16px;
+}
+
+.nav-icon-link:hover, .nav-more-button:hover {
+  background: rgba(55, 53, 47, 0.08);
+}
+
+.nav-more-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: rgba(55, 53, 47, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 3px;
+  padding: 0;
 }
 
 
 .content-container {
   flex: 1;
-  padding: 2rem;
+  padding: 0;
   overflow-y: auto;
+  background-color: #ffffff;
 }
 
-/* Cover image styling */
+/* Cover image styling - Notion style */
 .cover-image {
   width: 100%;
-  height: 250px;
-  background-color: #ccc;
+  height: 30vh; /* Notion uses viewport-relative height */
+  min-height: 200px;
+  max-height: 300px;
+  background-color: rgba(55, 53, 47, 0.05); /* Notion's placeholder color */
   background-size: cover;
   background-position: center;
-  margin-bottom: 1rem;
-  border-radius: 8px;
+  margin-bottom: 3rem; /* More space below cover image like Notion */
+  border-radius: 0; /* Notion doesn't use rounded corners for cover images */
 }
 
 .about-name {
-  font-size: 2rem;
-  margin-bottom: 1rem;
+  font-size: 40px; /* Notion uses larger headings */
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: rgb(55, 53, 47);
+  padding: 0 96px; /* Notion uses side padding instead of max-width */
 }
 
 .about-description {
-  font-size: 1rem;
+  font-size: 16px;
   line-height: 1.5;
+  color: rgba(55, 53, 47, 0.8); /* Slightly lighter text for descriptions */
+  padding: 0 96px;
+  margin-bottom: 30px;
 }
 
 /* Notion-like page block styling */
 .notion-style-page {
-  max-width: 700px;
-  margin: 0 auto;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding-bottom: 30vh; /* Notion has lots of space at the bottom */
 }
 
 .notion-block {
-  background: #fafafa;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  border-radius: 4px;
-  border: 1px solid #eee;
+  background: transparent; /* Notion blocks don't have backgrounds */
+  padding: 3px 2px; /* Minimal padding */
+  margin-bottom: 1px; /* Minimal margin */
+  border-radius: 3px; /* Subtle rounding */
+  border: none; /* No borders */
+  transition: background-color 100ms ease-in;
+}
+
+.notion-block:hover {
+  background-color: rgba(55, 53, 47, 0.03); /* Subtle hover effect */
 }
 
 .notion-block h3 {
-  margin: 0 0 0.5rem 0;
+  margin: 0 0 0.25rem 0;
+  font-weight: 600;
+  font-size: 1rem;
+  color: rgb(55, 53, 47);
 }
 
 .notion-block p {
-  margin: 0 0 0.5rem 0;
+  margin: 0 0 0.25rem 0;
+  font-size: 16px;
+  color: rgba(55, 53, 47, 0.8);
 }
 
-/* Projects Heading */
+/* Projects Heading - Notion style */
 .projects-heading {
-  margin-top: 2rem;
-  font-size: 1.5rem;
-  font-weight: 600;
+  margin-top: 2.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem; /* Notion uses larger headings */
+  font-weight: 700;
+  color: rgb(55, 53, 47);
+  padding: 0 96px; /* Match the side padding */
 }
 
 /* Notion-style Table */
 .notion-table {
   display: flex;
   flex-direction: column;
-  border: 1px solid #e0e0e0;
-  border-radius: 6px;
+  border: 1px solid rgba(55, 53, 47, 0.09); /* Notion's exact border color */
+  border-radius: 3px;
   overflow: hidden;
+  box-shadow: rgba(15, 15, 15, 0.05) 0px 0px 0px 1px, rgba(15, 15, 15, 0.1) 0px 3px 6px, rgba(15, 15, 15, 0.2) 0px 9px 24px; /* Notion's exact shadow */
   font-size: 14px;
+  margin: 0 96px; /* Match the side padding */
+  background: white;
 }
 
-/* Table Header */
+/* Table Header - Notion style */
 .notion-table-header {
   display: flex;
-  background-color: #fafafa;
   font-weight: 600;
-  padding: 10px;
-  border-bottom: 1px solid #ddd;
+  padding: 6px 8px;
+  color: rgba(55, 53, 47, 0.65); /* Notion's exact header text color */
+  border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+  background-color: rgba(242, 241, 238, 0.6); /* Notion's exact header background */
+  position: sticky;
+  top: 0;
+  z-index: 2;
 }
 
 .notion-table-header .notion-table-cell {
-  color: #787878;
+  color: inherit;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
-/* Table Row */
+/* Table Row - Notion style */
 .notion-table-row {
   display: flex;
-  padding: 12px 10px;
-  border-bottom: 1px solid #ddd;
-  transition: background 0.2s ease-in-out;
+  padding: 7px 8px;
+  border-bottom: 1px solid rgba(55, 53, 47, 0.09); /* Notion's exact row border */
+  transition: background 120ms ease-in 0s;
 }
 
 .notion-table-row:hover {
-  background: #f8f8f8;
+  background: rgba(55, 53, 47, 0.03); /* Notion's exact hover color */
 }
 
 .notion-table-row:last-child {
   border-bottom: none;
 }
 
-/* Table Cell */
+/* Table Cell - Notion style */
 .notion-table-cell {
   flex: 1;
-  padding: 10px;
+  padding: 0 8px;
   text-align: left;
+  font-size: 14px;
+  line-height: 1.5;
+  color: rgb(55, 53, 47);
+  min-width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .notion-table-cell.title {
-  font-weight: bold;
+  font-weight: 500;
+  color: rgb(55, 53, 47);
 }
 
 .notion-table-cell.description {
-  color: #444;
+  color: rgba(55, 53, 47, 0.65); /* Notion's exact description text color */
+  font-size: 14px;
 }
 
-/* "New Page" Placeholder */
+/* "New Page" Placeholder - Notion style */
 .notion-table-row.new-page {
-  color: #888;
+  color: rgba(55, 53, 47, 0.5);
   cursor: pointer;
+  height: 36px;
+  display: flex;
+  align-items: center;
 }
 
 .notion-table-row.new-page:hover {
-  background: #f3f3f3;
+  background: rgba(55, 53, 47, 0.03); /* Notion's exact hover color */
 }
 
 .notion-table-row.new-page .notion-table-cell {
   text-align: center;
   font-weight: 500;
-}
-
-/* Projects Heading */
-.projects-heading {
-  margin-top: 2rem;
-  font-size: 1.2rem;
-  font-weight: 500;
-}
-
-/* Notion-style Table */
-.notion-table {
-  display: flex;
-  flex-direction: column;
-  border-radius: 6px;
-  overflow: hidden;
   font-size: 14px;
 }
 
-/* Table Header (No Background, No Highlight) */
-.notion-table-header {
-  display: flex;
-  font-weight: 500;
-  padding: 8px 0;
-  color: #888;
-  border-bottom: 1px solid #ddd;
+.notion-table-row.new-page .notion-table-cell::before {
+  content: "+";
+  margin-right: 4px;
+  font-weight: 700;
 }
 
-/* Table Row */
-.notion-table-row {
-  display: flex;
-  padding: 10px 0;
-  border-bottom: 1px solid #ddd;
-  transition: background 0.2s ease-in-out;
-}
+/* Removed duplicate projects heading */
 
-.notion-table-row:hover {
-  background: transparent;
-}
-
-/* Table Cell */
-.notion-table-cell {
-  flex: 1;
-  padding: 0 10px;
-  text-align: left;
-}
+/* Removed duplicate table styles */
 
 .notion-table-cell.title {
   font-weight: bold;
@@ -251,7 +328,7 @@ body {
 /* Vertical Divider */
 .notion-table-divider {
   width: 1px;
-  background: #ddd;
+  background: #e0e0e0; /* Lighter divider */
   height: auto;
 }
 
@@ -263,12 +340,246 @@ body {
 }
 
 .notion-table-row.new-page:hover {
-  background: #f3f3f3;
+  background: rgba(235, 236, 237, 0.5); /* Subtle hover for new page row */
 }
 
 .notion-table-row.new-page .notion-table-cell {
   text-align: center;
 }
 
+/* Notion AI Chat Styles */
+
+/* Chat button in bottom right corner - Notion AI style */
+.notion-ai-chat-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: rgb(35, 131, 226); /* Notion AI blue */
+  color: white;
+  border: none;
+  box-shadow: rgba(15, 15, 15, 0.1) 0px 0px 0px 1px, rgba(15, 15, 15, 0.1) 0px 2px 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1000;
+  font-size: 16px;
+  transition: background-color 20ms ease-in 0s;
+}
+
+.notion-ai-chat-button:hover {
+  background-color: rgb(6, 111, 211); /* Darker blue on hover */
+}
+
+/* Chat container - Notion AI style */
+.notion-ai-chat-container {
+  position: fixed;
+  bottom: 70px;
+  right: 20px;
+  width: 300px;
+  height: 400px;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: rgba(15, 15, 15, 0.05) 0px 0px 0px 1px, rgba(15, 15, 15, 0.1) 0px 3px 6px, rgba(15, 15, 15, 0.2) 0px 9px 24px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 1000;
+  border: none;
+  transition: width 200ms ease-out 0s, height 200ms ease-out 0s;
+}
+
+/* Expanded chat container - Notion AI style */
+.notion-ai-chat-container.expanded {
+  width: 450px;
+  height: 550px;
+}
+
+/* Chat header - Notion AI style */
+.notion-ai-chat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+  background-color: white;
+}
+
+.notion-ai-chat-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+  color: rgb(55, 53, 47);
+  font-size: 14px;
+}
+
+.notion-ai-icon {
+  font-size: 14px;
+  color: rgb(35, 131, 226); /* Notion AI blue */
+}
+
+.notion-ai-chat-controls {
+  display: flex;
+  gap: 4px;
+}
+
+.notion-ai-expand-button,
+.notion-ai-close-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: rgba(55, 53, 47, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  border-radius: 3px;
+  font-size: 12px;
+  width: 24px;
+  height: 24px;
+}
+
+.notion-ai-expand-button:hover,
+.notion-ai-close-button:hover {
+  background-color: rgba(55, 53, 47, 0.08);
+  color: rgba(55, 53, 47, 0.65);
+}
+
+/* Chat messages area - Notion AI style */
+.notion-ai-chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background-color: rgb(251, 251, 250); /* Notion AI chat background */
+}
+
+/* Empty state - Notion AI style */
+.notion-ai-empty-state {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: rgba(55, 53, 47, 0.5);
+  font-style: normal;
+  font-size: 14px;
+}
+
+.notion-ai-loading::after {
+  content: "...";
+  animation: loading-dots 1.5s infinite;
+  width: 1em;
+  text-align: left;
+}
+
+@keyframes loading-dots {
+  0%, 20% { content: "."; }
+  40% { content: ".."; }
+  60%, 100% { content: "..."; }
+}
+
+/* Message bubbles - Notion AI style */
+.notion-ai-message {
+  max-width: 90%;
+  padding: 6px 10px;
+  border-radius: 5px;
+  line-height: 1.5;
+  font-size: 14px;
+  margin-bottom: 2px;
+}
+
+/* User message - Notion AI style */
+.notion-ai-message.user {
+  align-self: flex-end;
+  background-color: rgb(235, 244, 255); /* Notion AI user message blue */
+  color: rgb(55, 53, 47);
+}
+
+/* AI message - Notion AI style */
+.notion-ai-message.ai {
+  align-self: flex-start;
+  background-color: white;
+  color: rgb(55, 53, 47);
+  border: 1px solid rgba(55, 53, 47, 0.09);
+  border-left: none;
+}
+
+/* Loading indicator - Notion AI style */
+.notion-ai-loading {
+  display: flex;
+  align-items: center;
+  color: rgba(55, 53, 47, 0.5);
+  font-style: normal;
+  font-size: 14px;
+}
+
+.notion-ai-loading::after {
+  content: "...";
+  animation: loading-dots 1.5s infinite;
+  width: 1em;
+  text-align: left;
+}
+
+@keyframes loading-dots {
+  0%, 20% { content: "."; }
+  40% { content: ".."; }
+  60%, 100% { content: "..."; }
+}
+
+/* Chat input form - Notion AI style */
+.notion-ai-chat-form {
+  display: flex;
+  padding: 8px 12px;
+  border-top: 1px solid rgba(55, 53, 47, 0.09);
+  background-color: white;
+}
+
+.notion-ai-input {
+  flex: 1;
+  border: 1px solid rgba(55, 53, 47, 0.16);
+  border-radius: 3px;
+  padding: 8px 10px;
+  font-size: 14px;
+  resize: none;
+  outline: none;
+  font-family: inherit;
+  line-height: 1.4;
+  min-height: 20px;
+  max-height: 120px;
+}
+
+.notion-ai-input:focus {
+  border-color: rgb(35, 131, 226); /* Notion AI blue */
+}
+
+.notion-ai-send-button {
+  margin-left: 6px;
+  padding: 4px 10px;
+  background-color: rgb(35, 131, 226); /* Notion AI blue */
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  height: 28px;
+  align-self: flex-end;
+}
+
+.notion-ai-send-button:hover {
+  background-color: rgb(6, 111, 211); /* Darker blue on hover */
+}
+
+.notion-ai-send-button:disabled {
+  background-color: rgba(55, 53, 47, 0.08);
+  color: rgba(55, 53, 47, 0.3);
+  cursor: not-allowed;
+}
 
 

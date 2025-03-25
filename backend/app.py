@@ -39,6 +39,21 @@ experiences_data = [
     }
 ]
 
+achievements_data = [
+    {
+        "title": "Achievement One",
+        "description": "Received recognition for outstanding performance in project delivery."
+    },
+    {
+        "title": "Achievement Two",
+        "description": "Won first place in a hackathon competition with an innovative solution."
+    },
+    {
+        "title": "Achievement Three",
+        "description": "Published a research paper on advanced algorithms in a prestigious journal."
+    }
+]
+
 @app.route("/api/about", methods=["GET"])
 def get_about():
     return jsonify(about_data)
@@ -50,6 +65,10 @@ def get_projects():
 @app.route("/api/experiences", methods=["GET"])
 def get_experiences():
     return jsonify(experiences_data)
+
+@app.route("/api/achievements", methods=["GET"])
+def get_achievements():
+    return jsonify(achievements_data)
 
 @app.route("/api/groq", methods=["POST"])
 def groq_chat():

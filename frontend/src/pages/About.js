@@ -1,7 +1,6 @@
 // src/pages/About.js
 import React, { useEffect, useState } from 'react';
 import CoverImage from './CoverImage'; // or wherever CoverImage is located
-import GroqChat from './GroqChat';     // <-- Import the GroqChat component here
 
 const About = () => {
   const [about, setAbout] = useState(null);
@@ -67,8 +66,7 @@ const About = () => {
         </div>
       </div>
 
-      {/* Groq Chat Section */}
-      <GroqChat />
+      {/* Removed Groq Chat Section as it's now global in App.js */}
     </div>
   );
 };
