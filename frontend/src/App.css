@@ -538,6 +538,7 @@
   padding: 8px 12px;
   border-top: 1px solid rgba(55, 53, 47, 0.09);
   background-color: white;
+  align-items: center;
 }
 
 .notion-ai-input {
@@ -559,7 +560,6 @@
 }
 
 .notion-ai-send-button {
-  margin-left: 6px;
   padding: 4px 10px;
   background-color: rgb(35, 131, 226); /* Notion AI blue */
   color: white;
@@ -569,7 +569,7 @@
   font-size: 14px;
   font-weight: 500;
   height: 28px;
-  align-self: flex-end;
+  margin-left: 8px;
 }
 
 .notion-ai-send-button:hover {
@@ -580,6 +580,11 @@
   background-color: rgba(55, 53, 47, 0.08);
   color: rgba(55, 53, 47, 0.3);
   cursor: not-allowed;
+}
+
+.notion-ai-send-button-wrapper {
+  display: flex;
+  justify-content: center;
 }
 
 
