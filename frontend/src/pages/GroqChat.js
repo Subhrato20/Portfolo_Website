@@ -2,9 +2,50 @@
 import React, { useState, useEffect } from 'react';
 import { FaRobot, FaTimes, FaChevronUp, FaChevronDown } from 'react-icons/fa';
 
+// Resume data - you can move this to a separate file if needed
+const resumeText = `Subhrato Som
+Master's in Computer Science | Drexel University
+Bachelor's in Computer Science and Engineering | Vellore Institute of Technology
+
+SKILLS:
+Programming Languages: Python, Java, JavaScript, C++, SQL
+Frameworks & Libraries: React, Node.js, TensorFlow, Keras, PyTorch, Django, Flask
+Cloud & DevOps: AWS (EC2, SageMaker, Lambda, Cognito), Docker, Git, CI/CD
+Databases: MySQL, PostgreSQL, MongoDB, Redis
+Tools & Platforms: Jupyter Notebook, VS Code, PyCharm, Eclipse
+
+EXPERIENCE:
+Software Engineer Intern | Company A | 2023-2024
+- Developed and maintained web applications using React and Node.js
+- Implemented RESTful APIs and database integrations
+- Collaborated with cross-functional teams on agile development
+
+Machine Learning Research Assistant | Vellore Institute of Technology | 2022-2023
+- Conducted research on computer vision and natural language processing
+- Published papers on advanced algorithms in prestigious journals
+- Achieved 86.4% accuracy in disease identification using CNN architectures
+
+PROJECTS:
+Image Captioning System for Chest X-ray Images | Capstone Project
+- Developed an AI system using TensorFlow-Keras and CNN architectures (Xception, VGG16, ResNet)
+- Implemented LSTM networks for caption generation
+- Achieved 86.4% accuracy in disease identification
+- Technologies: Python, TensorFlow, Keras, OpenCV, NumPy
+
+E-commerce Platform | Full-Stack Development
+- Built a complete e-commerce solution with React frontend and Node.js backend
+- Integrated payment gateways and inventory management
+- Implemented user authentication and authorization
+- Technologies: React, Node.js, MongoDB, Express.js, JWT
+
+ACHIEVEMENTS:
+- Won first place in hackathon competition with innovative AI solution
+- Published research paper on advanced algorithms in prestigious journal
+- Received recognition for outstanding performance in project delivery
+- Dean's List recipient at Drexel University`;
+
 const GroqChat = () => {
   const [userMessage, setUserMessage] = useState("");
-  const [response, setResponse] = useState("");
   const [loading, setLoading] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
@@ -34,12 +75,16 @@ const GroqChat = () => {
     setLoading(true);
 
     try {
-      const res = await fetch('http://127.0.0.1:5000/api/groq', {
+      // Use the serverless function
+      const res = await fetch('/api/groq', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ message: userMessage }),
+        body: JSON.stringify({ 
+          message: userMessage,
+          resumeText: resumeText 
+        }),
       });
 
       const data = await res.json();
@@ -50,14 +95,12 @@ const GroqChat = () => {
         { type: 'user', content: userMessage },
         { type: 'ai', content: responseText }
       ]);
-      setResponse(responseText);
     } catch (error) {
       const errorMessage = 'Error occurred while fetching the response.';
       setChatHistory([...chatHistory,
         { type: 'user', content: userMessage },
         { type: 'ai', content: errorMessage }
       ]);
-      setResponse(errorMessage);
       console.error(error);
     }
 

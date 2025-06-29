@@ -1,70 +1,166 @@
-# Getting Started with Create React App
+# Portfolio Website - Frontend Only
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a React-based portfolio website that has been refactored to work without a separate backend server. All static data is now served directly from the frontend, and the AI chat functionality uses a serverless function.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Static Portfolio Data**: All content (about, projects, experiences, achievements) is served directly from the frontend
+- **AI Chat Assistant**: Uses Groq API via serverless function for interactive chat about the portfolio
+- **Modern UI**: Built with React and styled with CSS
+- **Responsive Design**: Works on desktop and mobile devices
 
-### `npm start`
+## Project Structure
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```
+frontend/
+├── src/
+│   ├── data/
+│   │   └── portfolioData.js     # All static portfolio data
+│   ├── pages/
+│   │   ├── About.js
+│   │   ├── Projects.js
+│   │   ├── Experiences.js
+│   │   ├── Achievements.js
+│   │   └── GroqChat.js          # AI chat component
+│   └── components/
+├── api/
+│   └── groq.js                  # Serverless function for Groq API
+└── vercel.json                  # Vercel deployment configuration
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Setup
 
-### `npm test`
+1. **Install dependencies**:
+   ```bash
+   npm install
+   ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. **Set up environment variables**:
+   Create a `.env` file in the frontend directory:
+   ```
+   REACT_APP_GROQ_API_KEY=your_groq_api_key_here
+   ```
 
-### `npm run build`
+3. **Run locally**:
+   ```bash
+   npm start
+   ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Deployment
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Option 1: Vercel (Recommended)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. **Install Vercel CLI**:
+   ```bash
+   npm i -g vercel
+   ```
 
-### `npm run eject`
+2. **Deploy**:
+   ```bash
+   vercel
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. **Set environment variable**:
+   ```bash
+   vercel env add GROQ_API_KEY
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Option 2: Netlify
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. **Build the project**:
+   ```bash
+   npm run build
+   ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+2. **Deploy to Netlify**:
+   - Drag and drop the `build` folder to Netlify
+   - Or use Netlify CLI
 
-## Learn More
+3. **Set environment variable**:
+   - Go to Site Settings > Environment Variables
+   - Add `GROQ_API_KEY` with your Groq API key
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Option 3: GitHub Pages
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. **Add homepage to package.json**:
+   ```json
+   {
+     "homepage": "https://yourusername.github.io/your-repo-name"
+   }
+   ```
 
-### Code Splitting
+2. **Install gh-pages**:
+   ```bash
+   npm install --save-dev gh-pages
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+3. **Add deploy script to package.json**:
+   ```json
+   {
+     "scripts": {
+       "predeploy": "npm run build",
+       "deploy": "gh-pages -d build"
+     }
+   }
+   ```
 
-### Analyzing the Bundle Size
+4. **Deploy**:
+   ```bash
+   npm run deploy
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Customization
 
-### Making a Progressive Web App
+### Updating Portfolio Data
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Edit `src/data/portfolioData.js` to update your:
+- Personal information
+- Projects
+- Work experience
+- Achievements
+- Cover image URL
 
-### Advanced Configuration
+### Updating Resume for AI Chat
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Edit the `resumeText` constant in `src/pages/GroqChat.js` to update the information the AI assistant uses to answer questions.
 
-### Deployment
+### Styling
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+All styles are in CSS files. You can customize:
+- `src/App.css` - Main application styles
+- `src/index.css` - Global styles
+- Component-specific styles in their respective files
 
-### `npm run build` fails to minify
+## API Endpoints
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The only API endpoint is:
+- `POST /api/groq` - Handles AI chat requests (serverless function)
+
+## Environment Variables
+
+- `GROQ_API_KEY` - Your Groq API key for the AI chat functionality
+
+## Benefits of This Setup
+
+1. **No Backend Server**: Everything runs on static hosting
+2. **Faster Loading**: No API calls for static data
+3. **Lower Costs**: Free hosting on platforms like Vercel, Netlify, or GitHub Pages
+4. **Easier Maintenance**: Update content by editing React files
+5. **Better Performance**: Static files are cached and served quickly
+
+## Troubleshooting
+
+### AI Chat Not Working
+- Ensure your Groq API key is set correctly
+- Check that the serverless function is deployed properly
+- Verify CORS settings if testing locally
+
+### Build Errors
+- Make sure all dependencies are installed
+- Check for syntax errors in JavaScript files
+- Ensure all imports are correct
+
+### Deployment Issues
+- Verify environment variables are set
+- Check that the build process completes successfully
+- Ensure the correct build directory is specified
