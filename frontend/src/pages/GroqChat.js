@@ -2,47 +2,77 @@
 import React, { useState, useEffect } from 'react';
 import { FaRobot, FaTimes, FaChevronUp, FaChevronDown } from 'react-icons/fa';
 
-// Resume data - you can move this to a separate file if needed
+// Resume data - updated with actual resume content
 const resumeText = `Subhrato Som
-Master's in Computer Science | Drexel University
-Bachelor's in Computer Science and Engineering | Vellore Institute of Technology
++1 (215) 240-9510 | subhratosom17@gmail.com | linkedin.com/in/subhratosom | github.com/Subhrato20
 
-SKILLS:
-Programming Languages: Python, Java, JavaScript, C++, SQL
-Frameworks & Libraries: React, Node.js, TensorFlow, Keras, PyTorch, Django, Flask
-Cloud & DevOps: AWS (EC2, SageMaker, Lambda, Cognito), Docker, Git, CI/CD
-Databases: MySQL, PostgreSQL, MongoDB, Redis
-Tools & Platforms: Jupyter Notebook, VS Code, PyCharm, Eclipse
+EDUCATION
+Drexel University - Philadelphia, PA
+Master's of Science in Computer Science, GPA: 3.80/4.00, Sep. 2023 – Jun. 2025
+Vellore Institute of Technology - Chennai, India
+Bachelor's of Degree in Computer Science, GPA: 8.25/10.00, Jul. 2019 – Jun. 2023
 
-EXPERIENCE:
-Software Engineer Intern | Company A | 2023-2024
-- Developed and maintained web applications using React and Node.js
-- Implemented RESTful APIs and database integrations
-- Collaborated with cross-functional teams on agile development
+EXPERIENCE
+Software Engineer (AI Tools Development), Mathtech, Inc., Hamilton, NJ, Jun. 2024 – Dec. 2024
+- Built a scalable, cloud-native Retrieval-Augmented Generation (RAG) system on AWS using Flask and Streamlit and participated in roadmapping and architecture discussions to align design with business consulting needs
+- Engineered a robust pipeline using S3 for storage, SageMaker for deploying Llamas, and Milvus (EC2) for document storage, embedding, vector search, and context-aware output generation with an LLM, streamlining workflows through text-based query resolution
+- Enhanced response performance by 30% using adaptive chunking, BERT-based chunk ranking, and dense embeddings using BAA/lbge-m3
+- Implemented automated shutdown of underutilized SageMaker resources based on usage patterns, cutting operational costs by 80%
+- Enabled secure user authentication for internal users by integrating AWS Cognito, improving access reliability and streamlining the authorization flow
 
-Machine Learning Research Assistant | Vellore Institute of Technology | 2022-2023
-- Conducted research on computer vision and natural language processing
-- Published papers on advanced algorithms in prestigious journals
-- Achieved 86.4% accuracy in disease identification using CNN architectures
+Software Engineer (Research), Social-NLP Lab, CCI Drexel University, Philadelphia, PA, Feb. 2024 – Present
+- Conducted in-depth research on substance abuse memes on Reddit, to identify trends and insights for academic understanding
+- Utilized Large Language Models (Llama, GPT) to analyze and interpret textual and visual elements, advancing the field of digital sociology
+- Worked on comparative analysis of multiple LLM, focusing on application-specific strengths to derive actionable insights for the research
+- Implemented batch API methods for GPT-based inference, significantly improving processing efficiency for large-scale textual datasets
 
-PROJECTS:
-Image Captioning System for Chest X-ray Images | Capstone Project
-- Developed an AI system using TensorFlow-Keras and CNN architectures (Xception, VGG16, ResNet)
-- Implemented LSTM networks for caption generation
-- Achieved 86.4% accuracy in disease identification
-- Technologies: Python, TensorFlow, Keras, OpenCV, NumPy
+PROJECTS
+Voice Agent for Wealth Management (DragonHacks 2025) | Gemini, Function Calling, Retell, FastAPI, Next.js, Apr. 2025
+- Developed voice-enabled AI wealth advisor using Gemini 2.5 and Retell SDK to execute real-time stock analysis, personalized recommendations, and auto-trading via conversational bots
+- Designed a modular full-stack system with Next.js dashboards for dynamic portfolio tracking, transaction history, and user-specific insights
 
-E-commerce Platform | Full-Stack Development
-- Built a complete e-commerce solution with React frontend and Node.js backend
-- Integrated payment gateways and inventory management
-- Implemented user authentication and authorization
-- Technologies: React, Node.js, MongoDB, Express.js, JWT
+GPT Operator Agent for Phone Devices (Bitcamp 2025) | Gemini, Function Calling, Pydantic, Kotlin, WebSockets, Apr. 2025
+- Built a native Android agent that automates US tasking using Gemini 2.5 and robust session state via MediaProjection API
+- Engineered a grid-based coordinate tracker integrated with multimodal prompts, session state management, and dynamic UI automation using Pydantic schemas and OpenAI-style function calling with Gemini 2.5 Pro
+- Achieved sub-5s latency with bidirectional WebSocket communication and full local execution
 
-ACHIEVEMENTS:
-- Won first place in hackathon competition with innovative AI solution
-- Published research paper on advanced algorithms in prestigious journal
-- Received recognition for outstanding performance in project delivery
-- Dean's List recipient at Drexel University`;
+AI-Powered Visual Style Pipeline (HooHacks 2025 Win) | Gemini, GAN, Serp API, Flask, React Native, AWS, Mar. 2025
+- Built an image transformation pipeline with recommendations and AI-designed clothes based on user's outfit using Gemini 2.0 Flash Experimental
+- Implemented reverse image search with Serp API and used Gemini 2.5 Pro to extract genuine product details like name, price, store, and etc
+- Engineered a Creator-Discriminator architecture inspired by GANs to generate diverse, style-aligned concept shoes
+
+RAG-Based AI Agent for Xfinity Services (Codefest 2025 Win) | Milvus, Claude, Perplexity, Firecrawl, Flask, React.js, EC2, Mar. 2025
+- Built an end-to-end AI agent to help users identify Xfinity services and bundled needs based on their persona and prompt
+- Implemented Retrieval-Augmented Generation (RAG) using Milvus as a Vector DB with webpage scraped via Firecrawl
+- Integrated Serp API for efficient responses and Perplexity to automate competitive product research, boosting insight accuracy by 40%
+
+Test-Driven Snake Game using Design Patterns | Java, MVC, TDD, Mutation Testing, Static Analysis, Feb. 2025
+- Java-based 2D Snake Game using MVC and design patterns (Factory, Adapter, Strategy), reaching 76% mutation coverage through JUnit, Mockito, and Cucumber tests and ensured clean architecture and error critical issues through SOLID and static analysis
+
+Finance Risk Analytics Platform (Codefest 2024 Win) | Flask, PyTorch, AutoEncoders, EC2, Apr. 2024
+- Developed a risk analysis platform using Poisson Distribution, Autoencoder and Logistic Regression in PyTorch, achieving 89% accuracy to predict financial damages from natural disasters
+- Designed an interactive UI in Flask and deployed a responsive Flask app on AWS EC2 for seamless user experience
+
+Alzheimer's Classification using OASIS Dataset | Python, CNN, Custom-LDA, PCA, Canny Edge Detection, Nov. 2023 – Dec. 2023
+- Designed custom Logistic Regression, LDA, and CNN models built from scratch for MRI analysis, achieving 86% ensemble accuracy
+- Processed 80K+ medical images by applying Canny edge detection, Gaussian blur and PCA enhancing feature extraction accuracy by 20%
+
+Chest X-ray Classification and Captioning | Tensorflow, CNN, LSTM, Transformers, Jan. 2023 – Apr. 2023
+- Built encoder-decoder models with TensorFlow, boosting chest X-ray disease classification and captioning accuracy to 86%
+- Leveraged CNNs (VGG16-ResNet) for feature extraction, followed by LSTMs and Transformers to capture global context
+
+TECHNICAL SKILLS
+Languages: Python, Java, JavaScript, Matlab, Swift, Julia, Rust, C, C++
+Cloud & DevOps: AWS (EC2, SageMaker, Lambda, Glue, ECR, GCP, NGINX, Docker, Jenkins, Kubernetes, Terraform, Pulumi)
+Web: HTML, CSS, React.js, Vue.js, Node.js, Express.js, Angular, Flask, Django, FastAPI, Streamlit
+Machine Learning: scikit-learn, TensorFlow, PyTorch, CUDA, CLang, LlamaIndex, LlamaIndex, faiss, HuggingFace
+Database: MySQL, PostgreSQL, MongoDB, SQLite, DynamoDB, Milvus, Qdrant, Pinecone
+
+ACHIEVEMENT
+Google Gemini Grand Winner, HooHacks 2025
+Best AI Agent, Codefest 2025
+Bitcamp 2025 Operator Agent Winner
+`;
 
 const GroqChat = () => {
   const [userMessage, setUserMessage] = useState("");
