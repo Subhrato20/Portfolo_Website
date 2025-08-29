@@ -1,4 +1,4 @@
-# Portfolio Website - Frontend Only
+# Portfolio Website
 
 This is a React-based portfolio website that has been refactored to work without a separate backend server. All static data is now served directly from the frontend, and the AI chat functionality uses a serverless function.
 
