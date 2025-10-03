@@ -105,8 +105,8 @@ const GroqChat = () => {
     setLoading(true);
 
     try {
-      // Use the serverless function
-      const res = await fetch('/api/groq', {
+      // Use the .NET API
+      const res = await fetch('https://localhost:7000/api/groq', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
